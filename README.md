@@ -13,7 +13,7 @@ Check the default password that docker create for your database by looking at th
 
 After copying the password you can access the MySQL by doing.
 
-`docker exec -it mysql01 mysql -uroot -p`
+`docker exec -it <container_name> mysql -uroot -p`
 
 Right after change your root password by running the following:
 
