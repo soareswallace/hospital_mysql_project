@@ -10,6 +10,7 @@ DROP TABLE Cuida;
 DROP TABLE Tecnico;
 DROP TABLE Enfermeiro;
 DROP TABLE Medico;
+DROP TABLE Executa;
 DROP TABLE Funcionario;
 DROP TABLE Acompanha;
 DROP TABLE Paciente;
@@ -19,7 +20,6 @@ DROP TABLE Pessoa;
 DROP TABLE Leito;
 DROP TABLE Prontuario;
 DROP TABLE Remedio;
-DROP TABLE Executa;
 DROP TABLE Exame;
 
 --CREATE DOMAIN TIPO_CPF AS CHAR(11); --NAO EH POSSIVEL CRIAR DOMAINS EM MYSQL
@@ -48,6 +48,12 @@ CREATE TABLE Paciente (
     CONSTRAINT FK_PacientePessoa_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF)
 );
 
+CREATE TABLE Funcionario_Paciente(
+    tempo_de_dispensa INT NOT NULL,
+    matricula_funcionario VARCHAR(16) UNIQUE,
+    CONSTRAINT FK_MatriculaFuncionario FOREIGN KEY (matricula_funcionario) REFERENCES Funcionario(matricula)
+);
+
 CREATE TABLE Acompanhante (
     CPF_Acompanhante VARCHAR(11) UNIQUE,
     CONSTRAINT FK_AcompanhantePessoa_CPF FOREIGN KEY (CPF_Acompanhante) REFERENCES Pessoa(CPF)
@@ -57,7 +63,7 @@ CREATE TABLE Funcionario(
     matricula VARCHAR(16) UNIQUE NOT NULL,
     data_admissao DATE NOT NULL,
     data_demissao DATE,
-    CNTPS VARCHAR(8),
+    CNTPS VARCHAR(8) UNIQUE NOT NULL,
     salario FLOAT NOT NULL,
     carga_horaria INT NOT NULL,
     CPF_Funcionario VARCHAR (11) UNIQUE,
@@ -86,14 +92,14 @@ CREATE TABLE Enfermeiro (
 
 CREATE TABLE Acompanha (
     CPF_Paciente VARCHAR(11), 
-    CPF_Acompanhante VARCHAR(11) UNIQUE,
+    CPF_Acompanhante VARCHAR(11) UNIQUE NOT NULL,
     CONSTRAINT FK_Paciente_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
     CONSTRAINT FK_Acompanhante_CPF FOREIGN KEY (CPF_Acompanhante) REFERENCES Pessoa(CPF)
 );
 
 CREATE TABLE Cuida (
-    CPF_Paciente VARCHAR(11) NOT NULL,
-    matricula_enfermeiro VARCHAR(16) NOT NULL,
+    CPF_Paciente VARCHAR(11),
+    matricula_enfermeiro VARCHAR(16),
     CONSTRAINT FK_PacienteCuida_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
     CONSTRAINT FK_EnfermeiroCuida_Matricula FOREIGN KEY (matricula_enfermeiro) REFERENCES Funcionario(matricula)
 );
@@ -105,17 +111,17 @@ CREATE TABLE Chefia (
     CONSTRAINT FK_EnfermeiroChefiado_Matricula FOREIGN KEY (matricula_enfermeiro_chefiado) REFERENCES Funcionario(matricula)
 );
 
-CREATE TABLE Ocupa (
-    CPF_Paciente VARCHAR(11) UNIQUE NOT NULL,
-    leito_ID VARCHAR (36) UNIQUE NOT NULL,
-    CONSTRAINT FK_PacienteOcupa_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
-    CONSTRAINT FK_LeitoID FOREIGN KEY (leito_ID) REFERENCES Leito(id)
-);
-
 CREATE TABLE Leito (
     id VARCHAR(36),
-    ocupado Boolean DEFAULT FALSE,
+    ocupado BOOLEAN DEFAULT FALSE,
     PRIMARY KEY(id)
+);
+
+CREATE TABLE Ocupa (
+    CPF_Paciente VARCHAR(11) UNIQUE,
+    leito_ID VARCHAR (36) UNIQUE,
+    CONSTRAINT FK_PacienteOcupa_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
+    CONSTRAINT FK_LeitoID FOREIGN KEY (leito_ID) REFERENCES Leito(id)
 );
 
 CREATE TABLE Prontuario(
@@ -131,7 +137,7 @@ CREATE TABLE Prontuario(
 
 CREATE TABLE Possui (
     CPF_Paciente VARCHAR(11) UNIQUE NOT NULL,
-    codigo_prontuario VARCHAR(36) UNIQUE NOT NULL,
+    codigo_prontuario VARCHAR(36) UNIQUE,
     CONSTRAINT FK_PacienteProntuario_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
     CONSTRAINT FK_ProntuarioPossui FOREIGN KEY (codigo_prontuario) REFERENCES Prontuario(codigo)
 );
@@ -144,9 +150,11 @@ CREATE TABLE Remedio (
 );
 
 CREATE TABLE Consulta (
-    CPF_Paciente VARCHAR(11) UNIQUE NOT NULL,
-    matricula_medico VARCHAR(16) UNIQUE NOT NULL,
+    id VARCHAR(36),
+    CPF_Paciente VARCHAR(11),
+    matricula_medico VARCHAR(16),
     remedioID VARCHAR(13),
+    PRIMARY KEY (id),
     CONSTRAINT FK_PacienteConsulta_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
     CONSTRAINT FK_MedicoConsulta_Matricula FOREIGN KEY (matricula_medico) REFERENCES Funcionario(matricula),
     CONSTRAINT FK_Remedio FOREIGN KEY (remedioID) REFERENCES Remedio(registroMS)
@@ -163,17 +171,17 @@ CREATE TABLE Exame(
 );
 
 CREATE TABLE Executa (
-    CPF_Paciente VARCHAR(11) UNIQUE NOT NULL,
-    codigo_exame VARCHAR(36) NOT NULL,
+    CPF_Paciente VARCHAR(11) NOT NULL,
+    codigo_exame VARCHAR(36) UNIQUE NOT NULL,
     matricula_tecnico VARCHAR(16) NOT NULL,
     CONSTRAINT FK_PacienteExame_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
     CONSTRAINT FK_CodigoExame FOREIGN KEY (codigo_exame) REFERENCES Exame(codigo),
     CONSTRAINT FK_Tecnico FOREIGN KEY (matricula_tecnico) REFERENCES Funcionario(matricula)
 );
 
-CREATE TABLE Pescreve (
-    matricula_medico VARCHAR(16) UNIQUE NOT NULL,
-    remedioID VARCHAR(13),
-    CONSTRAINT FK_MedicoPescreve_Matricula FOREIGN KEY (matricula_medico) REFERENCES Funcionario(matricula),
-    CONSTRAINT FK_RemedioPescrito FOREIGN KEY (remedioID) REFERENCES Remedio(registroMS)
+CREATE TABLE Prescreve (
+    id_consulta VARCHAR(36),
+    registroMS VARCHAR(13),
+    CONSTRAINT FK_id_consulta FOREIGN KEY (id_consulta) REFERENCES Consulta(id),
+    CONSTRAINT FK_RemedioPescrito FOREIGN KEY (registroMS) REFERENCES Remedio(registroMS)
 );
