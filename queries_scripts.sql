@@ -76,3 +76,29 @@ GROUP BY Especialidade;
 -- FROM Cuida 
 -- INNER JOIN Enfermeiro 
 -- ON Enfermeiro.matricula_enfermeiro = Cuida.matricula_enfermeiro;
+
+-- selecionar dados de uma tabela mediante alguma condição
+-- selecionar um subconjunto de atributos de uma tabela
+-- Retorna o nome, data de nascimento e CPF do indivíduo com CPF = "11111111111"
+SELECT nomeCompleto, dataNascimento, CPF 
+FROM Pessoa 
+WHERE CPF = "11111111111";
+
+-- selecionar todos os dados de uma tabela
+-- Retrona todos os dados de Paciente
+SELECT * 
+FROM Paciente;
+
+-- realizar seleção de dados sem apresentar duplicadas
+-- Retorna as especialidades dos enfermeiros cadastrados sem repetições
+SELECT DISTINCT Especialidade
+FROM Enfermeiro;
+
+-- aplicar produto cartesiano
+-- Retorna o produto cartesiano a partir da tabela de Consulta e Prescreve
+SELECT 
+    CPF_Paciente, registroMS
+FROM
+    Consulta AS a
+        CROSS JOIN
+    Prescreve AS b;
