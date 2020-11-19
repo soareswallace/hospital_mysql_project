@@ -36,6 +36,8 @@ INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Compl
 VALUES ("Roberto Roberta", "12745378901", SUBDATE(NOW(), INTERVAL 23 YEAR), 23, "52095850", "101", "Apt 4");
 INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
 VALUES ("Julia Roberta", "12746728901", SUBDATE(NOW(), INTERVAL 30 YEAR), 30, "52095650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
+VALUES ("Julia Claudia", "12746722201", SUBDATE(NOW(), INTERVAL 25 YEAR), 25, "52765650", "101", "Apt 4");
 
 
 
@@ -90,10 +92,12 @@ INSERT INTO Paciente (data_entrada, data_saida, CPF_Paciente) VALUES (SUBDATE(NO
 INSERT INTO Acompanhante(CPF_Acompanhante) VALUES ("22222222222");
 INSERT INTO Acompanhante(CPF_Acompanhante) VALUES ("12990378901");
 INSERT INTO Acompanhante(CPF_Acompanhante) VALUES ("12745378901");
+INSERT INTO Acompanhante(CPF_Acompanhante) VALUES ("12746722201");
 
 INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("33333333333", "22222222222");
 INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("12745987901", "12990378901");
 INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("12925378901", "12745378901");
+INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("12925378901", "12746722201");
 
 INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "9137284656428");
 INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "916428");
@@ -108,6 +112,7 @@ INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) V
 INSERT INTO Leito (id, ocupado) VALUES ("1", TRUE);
 INSERT INTO Leito (id, ocupado) VALUES ("2", TRUE);
 INSERT INTO Leito (id, ocupado) VALUES ("3", TRUE);
+INSERT INTO Leito (id, ocupado) VALUES ("4", FALSE);
 
 INSERT INTO Ocupa (CPF_Paciente, leito_ID) VALUES ("33333333333", "1");
 INSERT INTO Ocupa (CPF_Paciente, leito_ID) VALUES ("12745987901", "2");

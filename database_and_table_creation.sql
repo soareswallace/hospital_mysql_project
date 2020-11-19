@@ -8,9 +8,10 @@ DROP TABLE Tecnico;
 DROP TABLE Enfermeiro;
 DROP TABLE Medico;
 DROP TABLE Executa;
-DROP TABLE Funcionario;
 DROP TABLE Acompanha;
 DROP TABLE Paciente;
+DROP TABLE Funcionario_Paciente;
+DROP TABLE Funcionario;
 DROP TABLE Acompanhante;
 DROP TABLE Tel_Pessoa;
 DROP TABLE Pessoa;
@@ -46,17 +47,6 @@ CREATE TABLE Paciente (
     CONSTRAINT FK_PacientePessoa_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF)
 );
 
-CREATE TABLE Funcionario_Paciente(
-    tempo_de_dispensa INT NOT NULL,
-    matricula_funcionario VARCHAR(16) UNIQUE,
-    CONSTRAINT FK_MatriculaFuncionario FOREIGN KEY (matricula_funcionario) REFERENCES Funcionario(matricula)
-);
-
-CREATE TABLE Acompanhante (
-    CPF_Acompanhante VARCHAR(11) UNIQUE,
-    CONSTRAINT FK_AcompanhantePessoa_CPF FOREIGN KEY (CPF_Acompanhante) REFERENCES Pessoa(CPF)
-);
-
 CREATE TABLE Funcionario(
     matricula VARCHAR(16) UNIQUE NOT NULL,
     data_admissao DATE NOT NULL,
@@ -66,6 +56,17 @@ CREATE TABLE Funcionario(
     carga_horaria INT NOT NULL,
     CPF_Funcionario VARCHAR (11) UNIQUE,
     CONSTRAINT FK_FuncionarioPessoa_CPF FOREIGN KEY (CPF_Funcionario) REFERENCES Pessoa(CPF)
+);
+
+CREATE TABLE Funcionario_Paciente(
+    tempo_de_dispensa INT NOT NULL,
+    matricula_funcionario VARCHAR(16) UNIQUE,
+    CONSTRAINT FK_MatriculaFuncionario FOREIGN KEY (matricula_funcionario) REFERENCES Funcionario(matricula)
+);
+
+CREATE TABLE Acompanhante (
+    CPF_Acompanhante VARCHAR(11) UNIQUE,
+    CONSTRAINT FK_AcompanhantePessoa_CPF FOREIGN KEY (CPF_Acompanhante) REFERENCES Pessoa(CPF)
 );
 
 CREATE TABLE Medico (
