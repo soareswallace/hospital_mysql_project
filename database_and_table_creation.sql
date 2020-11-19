@@ -1,6 +1,3 @@
-CREATE DATABASE hospital;
-USE hospital;
-
 DROP TABLE Prescreve;
 DROP TABLE Consulta;
 DROP TABLE Possui;
@@ -21,6 +18,9 @@ DROP TABLE Leito;
 DROP TABLE Prontuario;
 DROP TABLE Remedio;
 DROP TABLE Exame;
+
+CREATE DATABASE hospital;
+USE hospital;
 
 CREATE TABLE Pessoa (
     nomeCompleto VARCHAR(100) NOT NULL,
@@ -70,7 +70,7 @@ CREATE TABLE Funcionario(
 
 CREATE TABLE Medico (
     CRM VARCHAR(10) UNIQUE NOT NULL,
-    Escpecialidade VARCHAR(30) NOT NULL,
+    Especialidade VARCHAR(30) NOT NULL,
     matricula_medico VARCHAR(16) UNIQUE,
     CONSTRAINT FK_MedicoFuncionario_Matricula FOREIGN KEY (matricula_medico) REFERENCES Funcionario(matricula)
 );
@@ -83,7 +83,7 @@ CREATE TABLE Tecnico (
 
 CREATE TABLE Enfermeiro (
     CRE VARCHAR(10) UNIQUE NOT NULL,
-    Escpecialidade VARCHAR(30) NOT NULL,
+    Especialidade VARCHAR(30) NOT NULL,
     matricula_enfermeiro VARCHAR(16) UNIQUE,
     CONSTRAINT FK_EnfermeiroFuncionario_Matricula FOREIGN KEY (matricula_enfermeiro) REFERENCES Funcionario(matricula)
 );
