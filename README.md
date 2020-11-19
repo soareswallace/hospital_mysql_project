@@ -18,4 +18,3 @@ After copying the password you can access the MySQL by doing.
 Right after change your root password by running the following:
 
 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';`
-

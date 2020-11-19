@@ -151,11 +151,9 @@ CREATE TABLE Consulta (
     id VARCHAR(36),
     CPF_Paciente VARCHAR(11),
     matricula_medico VARCHAR(16),
-    remedioID VARCHAR(13),
     PRIMARY KEY (id),
     CONSTRAINT FK_PacienteConsulta_CPF FOREIGN KEY (CPF_Paciente) REFERENCES Pessoa(CPF),
-    CONSTRAINT FK_MedicoConsulta_Matricula FOREIGN KEY (matricula_medico) REFERENCES Funcionario(matricula),
-    CONSTRAINT FK_Remedio FOREIGN KEY (remedioID) REFERENCES Remedio(registroMS)
+    CONSTRAINT FK_MedicoConsulta_Matricula FOREIGN KEY (matricula_medico) REFERENCES Funcionario(matricula)
 );
 
 CREATE TABLE Exame(
