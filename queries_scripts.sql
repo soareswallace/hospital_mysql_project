@@ -46,7 +46,7 @@ ORDER BY Nome ASC;
 -- Retorna pessoas cujo nome comeca por "Robert"
 SELECT nomeCompleto
 FROM Pessoa
-WHERE nomeCompleto like "Robert%";
+WHERE nomeCompleto LIKE "Robert%";
 
 
 -- realizar agrupamento de resultado de consulta
