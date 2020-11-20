@@ -27,7 +27,6 @@ CREATE TABLE Pessoa (
     nomeCompleto VARCHAR(100) NOT NULL,
     CPF VARCHAR(11),
     dataNascimento DATE NOT NULL,
-    idade INT  NOT NULL,
     CEP VARCHAR(8) NOT NULL,
     numero VARCHAR(10) NOT NULL,
     complemento VARCHAR(100),

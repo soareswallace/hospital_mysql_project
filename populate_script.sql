@@ -1,49 +1,49 @@
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Wallace Soares", "11111111111", SUBDATE(NOW(), INTERVAL 24 YEAR), 24, "52011050", "31");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Eden Filho", "22222222222", SUBDATE(NOW(), INTERVAL 30 YEAR), 30, "52086050", "312");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Julia Feitosa", "33333333333", SUBDATE(NOW(), INTERVAL 50 YEAR), 50, "52054050", "311", "Apt 701");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Pedro Basilio", "44444444444", SUBDATE(NOW(), INTERVAL 70 YEAR), 70, "52013750", "431");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Umdostrês de Oliveria Quatro", "55555555555", SUBDATE(NOW(), INTERVAL 35 YEAR), 35, "52981050", "1");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Xerox Silva", "66666666666", SUBDATE(NOW(), INTERVAL 56 YEAR), 56, "55211050", "31321");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Fotocopia Silva", "77777777777", SUBDATE(NOW(), INTERVAL 76 YEAR), 76, "52009050", "3311");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Mario Silva", "88888888888", SUBDATE(NOW(), INTERVAL 76 YEAR), 76, "52009050", "3341211");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Jeff Silva", "99999999999", SUBDATE(NOW(), INTERVAL 56 YEAR), 56, "52009050", "334111");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Roberta Silva", "00000000000", SUBDATE(NOW(), INTERVAL 46 YEAR), 46, "52009050", "331141");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Claudio Silva", "12345678901", SUBDATE(NOW(), INTERVAL 26 YEAR), 26, "52009050", "334111");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Karla Silva", "12745678901", SUBDATE(NOW(), INTERVAL 30 YEAR), 30, "52009050", "333456111");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero)
-VALUES ("Karl Marx", "12745288901", SUBDATE(NOW(), INTERVAL 80 YEAR), 80, "52007050", "333111");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Roberto Carlos", "12745378901", SUBDATE(NOW(), INTERVAL 70 YEAR), 70, "52086050", "333456111", "Apt 4501");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Roberto Carlos", "12745987901", SUBDATE(NOW(), INTERVAL 41 YEAR), 41, "52086450", "1", "Apt 401");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Roberto Junior", "12925378901", SUBDATE(NOW(), INTERVAL 65 YEAR), 65, "52083450", "S/N", "Apt 4");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Roberto João", "12990378901", SUBDATE(NOW(), INTERVAL 18 YEAR), 18, "53183450", "101", "Apt 101");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Roberto Roberta", "12745378901", SUBDATE(NOW(), INTERVAL 23 YEAR), 23, "52095850", "101", "Apt 4");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Julia Roberta", "12746728901", SUBDATE(NOW(), INTERVAL 30 YEAR), 30, "52095650", "101", "Apt 4");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
-VALUES ("Julia Claudia", "12746722201", SUBDATE(NOW(), INTERVAL 25 YEAR), 25, "52765650", "101", "Apt 4");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento) 
-VALUES ("Eduardo Peixoto", "34567823412", SUBDATE(NOW(), INTERVAL 30 YEAR), 25, "52765650", "101", "Apt 4");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento) 
-VALUES ("Rita Lobo", "10928374657", SUBDATE(NOW(), INTERVAL 30 YEAR), 25, "52765650", "101", "Apt 4");
-INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento) 
-VALUES ("Joao Claudio", "92837461234", SUBDATE(NOW(), INTERVAL 30 YEAR), 25, "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Wallace Soares", "11111111111", SUBDATE(NOW(), INTERVAL 24 YEAR), "52011050", "31");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Eden Filho", "22222222222", SUBDATE(NOW(), INTERVAL 30 YEAR), "52086050", "312");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Julia Feitosa", "33333333333", SUBDATE(NOW(), INTERVAL 50 YEAR), "52054050", "311", "Apt 701");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Pedro Basilio", "44444444444", SUBDATE(NOW(), INTERVAL 70 YEAR), "52013750", "431");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Umdostrês de Oliveria Quatro", "55555555555", SUBDATE(NOW(), INTERVAL 35 YEAR), "52981050", "1");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Xerox Silva", "66666666666", SUBDATE(NOW(), INTERVAL 56 YEAR), "55211050", "31321");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Fotocopia Silva", "77777777777", SUBDATE(NOW(), INTERVAL 76 YEAR), "52009050", "3311");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Mario Silva", "88888888888", SUBDATE(NOW(), INTERVAL 76 YEAR), "52009050", "3341211");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Jeff Silva", "99999999999", SUBDATE(NOW(), INTERVAL 56 YEAR), "52009050", "334111");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Roberta Silva", "00000000000", SUBDATE(NOW(), INTERVAL 46 YEAR), "52009050", "331141");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Claudio Silva", "12345678901", SUBDATE(NOW(), INTERVAL 26 YEAR), "52009050", "334111");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Karla Silva", "12745678901", SUBDATE(NOW(), INTERVAL 30 YEAR), "52009050", "333456111");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero)
+VALUES ("Karl Marx", "12745288901", SUBDATE(NOW(), INTERVAL 80 YEAR), "52007050", "333111");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Roberto Carlos", "12745378901", SUBDATE(NOW(), INTERVAL 70 YEAR), "52086050", "333456111", "Apt 4501");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Roberto Carlos", "12745987901", SUBDATE(NOW(), INTERVAL 41 YEAR), "52086450", "1", "Apt 401");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Roberto Junior", "12925378901", SUBDATE(NOW(), INTERVAL 65 YEAR), "52083450", "S/N", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Roberto João", "12990378901", SUBDATE(NOW(), INTERVAL 18 YEAR), "53183450", "101", "Apt 101");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Roberto Roberta", "12745378901", SUBDATE(NOW(), INTERVAL 23 YEAR), "52095850", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Julia Roberta", "12746728901", SUBDATE(NOW(), INTERVAL 30 YEAR), "52095650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento)
+VALUES ("Julia Claudia", "12746722201", SUBDATE(NOW(), INTERVAL 25 YEAR), "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento) 
+VALUES ("Eduardo Peixoto", "34567823412", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento) 
+VALUES ("Rita Lobo", "10928374657", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento) 
+VALUES ("Joao Claudio", "92837461234", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650", "101", "Apt 4");
 
 
 INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario) 
