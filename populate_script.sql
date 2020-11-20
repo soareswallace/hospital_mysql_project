@@ -38,9 +38,20 @@ INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Compl
 VALUES ("Julia Roberta", "12746728901", SUBDATE(NOW(), INTERVAL 30 YEAR), 30, "52095650", "101", "Apt 4");
 INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento)
 VALUES ("Julia Claudia", "12746722201", SUBDATE(NOW(), INTERVAL 25 YEAR), 25, "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento) 
+VALUES ("Eduardo Peixoto", "34567823412", SUBDATE(NOW(), INTERVAL 30 YEAR), 25, "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento) 
+VALUES ("Rita Lobo", "10928374657", SUBDATE(NOW(), INTERVAL 30 YEAR), 25, "52765650", "101", "Apt 4");
+INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, idade, CEP, Numero, Complemento) 
+VALUES ("Joao Claudio", "92837461234", SUBDATE(NOW(), INTERVAL 30 YEAR), 25, "52765650", "101", "Apt 4");
 
 
-
+INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario) 
+VALUES ("213187312", SUBDATE(NOW(), INTERVAL 5 YEAR), NULL, "52009089", 3311, 40, "34567823412");
+INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario)
+VALUES ("2131821311", SUBDATE(NOW(), INTERVAL 5 YEAR), NULL, "57709089", 3311, 40, "10928374657");
+INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario) 
+VALUES ("2139991311", SUBDATE(NOW(), INTERVAL 5 YEAR), NULL, "58769089", 3311, 40, "92837461234");
 INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario)
 VALUES ("913728461928", SUBDATE(NOW(), INTERVAL 5 YEAR), NULL, "52009050", 3311, 40, "77777777777");
 INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario)
@@ -75,6 +86,10 @@ INSERT INTO Tecnico (registro, matricula_tecnico) VALUES ("12346", "9113261428")
 INSERT INTO Medico (CRM, Especialidade, matricula_medico) VALUES ("1234567890", "Clinico Geral", "913728467628");
 INSERT INTO Medico (CRM, Especialidade, matricula_medico) VALUES ("1234517890", "Clinico Geral", "113261428");
 INSERT INTO Medico (CRM, Especialidade, matricula_medico) VALUES ("1234564890", "Clinico Geral", "111428");
+INSERT INTO Medico (CRM, Especialidade, matricula_medico) VALUES ("9876543210", "Psiquiatra", "213187312");
+INSERT INTO Medico (CRM, Especialidade, matricula_medico) VALUES ("8876543219", "Psiquiatra", "2131821311");
+INSERT INTO Medico (CRM, Especialidade, matricula_medico) VALUES ("7654132909", "Endocrinologista", "2139991311");
+
 
 INSERT INTO Enfermeiro (CRE, Especialidade, matricula_enfermeiro) VALUES ("1234567890", "Generalista", "9137284656428");
 INSERT INTO Enfermeiro (CRE, Especialidade, matricula_enfermeiro) VALUES ("1234767890", "Pediatra", "916428");
