@@ -6,7 +6,7 @@ FROM Pessoa
 WHERE CPF = "11111111111";
 
 -- selecionar todos os dados de uma tabela
--- Retrona todos os dados de Paciente
+-- Retorna todos os dados de Paciente
 SELECT * 
 FROM Paciente;
 
