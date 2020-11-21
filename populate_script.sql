@@ -118,11 +118,9 @@ INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "9
 INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "916428");
 INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "111312428");
 
-INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", "916428");
 INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", "111312428");
 INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", "916428");
 INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", "111213");
-INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", NULL);
 
 INSERT INTO Leito (id, ocupado) VALUES ("1", TRUE);
 INSERT INTO Leito (id, ocupado) VALUES ("2", TRUE);
