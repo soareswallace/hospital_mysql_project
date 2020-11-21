@@ -33,7 +33,7 @@ Logo após entrar no container altere a senha para uma que você possa se lembra
 - [x] selecionar um subconjunto de atributos de uma tabela
 - [x] selecionar dados de uma tabela mediante alguma condição
 - [x] realizar seleção de dados sem apresentar duplicadas
-- [ ] realizar consulta de seleção-projeção-junção
+- [x] realizar consulta de seleção-projeção-junção
 - [x] atribuir “apelidos”
 - [x] aplicar união
 - [x] aplicar interseção
