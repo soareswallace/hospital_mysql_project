@@ -83,6 +83,9 @@ SELECT Especialidade, count(CRM) AS Qtde
 FROM Medico 
 GROUP BY Especialidade;
 
+SELECT data_admissao, CNTPS 
+FROM Funcionario, Medico
+WHERE salario > 2000 AND matricula=matricula_medico;
 
 -- criar regra para execução de comandos DDL
 -- CREATE ROLE ddl_role;
