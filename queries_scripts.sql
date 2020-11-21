@@ -83,6 +83,7 @@ SELECT Especialidade, count(CRM) AS Qtde
 FROM Medico 
 GROUP BY Especialidade;
 
+-- realizar consulta de seleção-projeção-junção
 SELECT data_admissao, CNTPS 
 FROM Funcionario, Medico
 WHERE salario > 2000 AND matricula=matricula_medico;
