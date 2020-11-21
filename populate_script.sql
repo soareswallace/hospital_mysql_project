@@ -45,6 +45,8 @@ VALUES ("Rita Lobo", "10928374657", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650"
 INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento) 
 VALUES ("Joao Claudio", "92837461234", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650", "101", "Apt 4");
 
+INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("11111111111", "994623846");
+
 
 INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario) 
 VALUES ("213187312", SUBDATE(NOW(), INTERVAL 5 YEAR), NULL, "52009089", 3311, 40, "34567823412");
