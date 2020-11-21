@@ -21,14 +21,12 @@ Logo após entrar no container altere a senha para uma que você possa se lembra
 
 ## Critérios do projeto
 
-## Ajuste no projeto lógico
-
-- [ ] valor padrão para atributo criado
-- [ ] validação de dados a serem inseridos
-- [ ] ação de disparo referencial
-
 ## Scripts
-
+- [ ] Ajuste no projeto lógico
+- [ ] Algebra relacional nos scripts
+- [x] valor padrão para atributo criado
+- [x] validação de dados a serem inseridos
+- [x] ação de disparo referencial
 - [x] selecionar todos os dados de uma tabela
 - [x] selecionar um subconjunto de atributos de uma tabela
 - [x] selecionar dados de uma tabela mediante alguma condição
@@ -44,13 +42,13 @@ Logo após entrar no container altere a senha para uma que você possa se lembra
 - [x] ordenar resultados de consultas de forma ascendente
 - [x] utilizar função de agregação
 - [x] realizar agrupamento de resultado de consulta
-- [ ] criar regra apenas para consultas do banco criado
-- [ ] criar regra para execução de comandos DML e DQL
-- [ ] criar regra para execução de comandos DDL
-- [ ] criar usuário que possua a regra padrão para consulta (criada anteriormente)
-- [ ] criar usuário que possua a regra padrão para comandos DML e DQL (criada anteriormente)
-- [ ] criar usuário que possua a regra padrão para comandos DDL (criada anteriormente)
+- [x] criar regra apenas para consultas do banco criado
+- [x] criar regra para execução de comandos DML e DQL
+- [x] criar regra para execução de comandos DDL
+- [x] criar usuário que possua a regra padrão para consulta (criada anteriormente)
+- [x] criar usuário que possua a regra padrão para comandos DML e DQL (criada anteriormente)
+- [x] criar usuário que possua a regra padrão para comandos DDL (criada anteriormente)
 - [x] criar uma transação única
 - [x] criar uma view a partir de mais de uma tabela
-- [ ] criar uma regra para consulta apenas na visualização criada
-- [ ] criar usuário que possua a regra padrão para consulta da view (criadas anteriormente)
+- [x] criar uma regra para consulta apenas na visualização criada
+- [x] criar usuário que possua a regra padrão para consulta da view (criadas anteriormente)

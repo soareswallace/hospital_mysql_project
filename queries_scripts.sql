@@ -88,24 +88,13 @@ SELECT data_admissao, CNTPS
 FROM Funcionario, Medico
 WHERE salario > 2000 AND matricula=matricula_medico;
 
--- criar regra para execução de comandos DDL
--- CREATE ROLE ddl_role;
--- GRANT CREATE, ALTER, DROP ON hospital.* TO 'ddl_role';
-
--- criar regra apenas para consultas do banco criado
--- CREATE ROLE query_role;
--- GRANT SELECT ON hospital TO query_role;
-
--- CREATE USER consultor IDENTIFIED BY '1234';
--- GRANT 'query_role' TO 'consultor@localhost';
-
-
--- Select Enfermeiro.matricula_enfermeiro as enfermeiro,
--- Cuida.CPF_Paciente as paciente,
-
--- FROM Cuida 
--- INNER JOIN Enfermeiro 
--- ON Enfermeiro.matricula_enfermeiro = Cuida.matricula_enfermeiro;
+-- criar uma transação única
+START TRANSACTION;
+    UPDATE Paciente SET data_saida = NOW()
+    WHERE CPF_Paciente="12925378901";
+    UPDATE Paciente SET data_saida = NOW()
+    WHERE CPF_Paciente="12745987901";
+COMMIT;
 
 -- CRIAÇÃO DE VIEW
 CREATE VIEW paciente_sem_enfermeiro AS
@@ -117,11 +106,39 @@ WHERE CPF_Paciente NOT IN (
 
 SELECT * FROM paciente_sem_enfermeiro;
 
--- criar uma transação única
-START TRANSACTION;
-    UPDATE Paciente SET data_saida = NOW()
-    WHERE CPF_Paciente="12925378901";
-    UPDATE Paciente SET data_saida = NOW()
-    WHERE CPF_Paciente="12745987901";
-COMMIT;
+-- criar usuário que possua a regra padrão para consulta da view (criadas anteriormente)
+-- criar uma regra para consulta apenas na visualização criada
+CREATE ROLE reader_view;
+GRANT SELECT ON hospital.paciente_sem_enfermeiro TO 'reader_view';
+CREATE USER 'viewer'@'localhost' IDENTIFIED BY 'viewer';
+GRANT 'reader_view' TO 'viewer'@'localhost';
+SET DEFAULT ROLE 'reader_view' TO 'viewer'@'localhost';
 
+-- criar regra apenas para consultas do banco criado
+-- criar usuário que possua a regra padrão para consulta (criada anteriormente)
+CREATE ROLE role_for_select;
+GRANT SELECT ON hospital.* TO 'role_for_select';
+CREATE USER 'user_only_for_select'@'localhost' IDENTIFIED BY 'select';
+GRANT 'role_for_select' TO 'user_only_for_select'@'localhost';
+SET DEFAULT ROLE 'role_for_select' TO 'user_only_for_select'@'localhost';
+
+-- criar regra para execução de comandos DDL
+-- criar usuário que possua a regra padrão para comandos DDL (criada anteriormente)
+CREATE ROLE role_for_ddl;
+GRANT CREATE ON hospital.* TO 'role_for_ddl';
+GRANT ALTER ON hospital.* TO 'role_for_ddl';
+GRANT DROP ON hospital.* TO 'role_for_ddl';
+CREATE USER 'user_ddl'@'localhost' IDENTIFIED BY 'ddl';
+GRANT 'role_for_ddl' TO 'user_ddl'@'localhost';
+SET DEFAULT ROLE 'role_for_ddl' TO 'user_ddl'@'localhost';
+
+-- criar usuário que possua a regra padrão para comandos DML e DQL (criada anteriormente)
+-- criar regra para execução de comandos DML e DQL
+CREATE ROLE role_for_dml_dql;
+GRANT INSERT ON hospital.* TO 'role_for_dml_dql';
+GRANT UPDATE ON hospital.* TO 'role_for_dml_dql';
+GRANT DELETE ON hospital.* TO 'role_for_dml_dql';
+GRANT SELECT ON hospital.* TO 'role_for_dml_dql';
+CREATE USER 'user_dml_dql'@'localhost' IDENTIFIED BY 'dml_dql';
+GRANT 'role_for_dml_dql' TO 'user_dml_dql'@'localhost';
+SET DEFAULT ROLE 'role_for_dml_dql' TO 'user_dml_dql'@'localhost';
