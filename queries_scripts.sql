@@ -102,3 +102,22 @@ GROUP BY Especialidade;
 -- FROM Cuida 
 -- INNER JOIN Enfermeiro 
 -- ON Enfermeiro.matricula_enfermeiro = Cuida.matricula_enfermeiro;
+
+-- CRIAÇÃO DE VIEW
+CREATE VIEW paciente_sem_enfermeiro AS
+SELECT CPF_Paciente
+FROM Paciente
+WHERE CPF_Paciente NOT IN (
+    SELECT CPF_Paciente FROM Cuida
+);
+
+SELECT * FROM paciente_sem_enfermeiro;
+
+-- criar uma transação única
+START TRANSACTION;
+    UPDATE Paciente SET data_saida = NOW()
+    WHERE CPF_Paciente="12925378901";
+    UPDATE Paciente SET data_saida = NOW()
+    WHERE CPF_Paciente="12745987901";
+COMMIT;
+

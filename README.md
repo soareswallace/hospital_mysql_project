@@ -50,7 +50,7 @@ Logo após entrar no container altere a senha para uma que você possa se lembra
 - [ ] criar usuário que possua a regra padrão para consulta (criada anteriormente)
 - [ ] criar usuário que possua a regra padrão para comandos DML e DQL (criada anteriormente)
 - [ ] criar usuário que possua a regra padrão para comandos DDL (criada anteriormente)
-- [ ] criar uma transação única
-- [ ] criar uma view a partir de mais de uma tabela
+- [x] criar uma transação única
+- [x] criar uma view a partir de mais de uma tabela
 - [ ] criar uma regra para consulta apenas na visualização criada
 - [ ] criar usuário que possua a regra padrão para consulta da view (criadas anteriormente)

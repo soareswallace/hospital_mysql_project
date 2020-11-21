@@ -45,8 +45,11 @@ VALUES ("Rita Lobo", "10928374657", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650"
 INSERT INTO Pessoa (nomeCompleto, CPF, dataNascimento, CEP, Numero, Complemento) 
 VALUES ("Joao Claudio", "92837461234", SUBDATE(NOW(), INTERVAL 30 YEAR), "52765650", "101", "Apt 4");
 
-INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("11111111111", "994623846");
-
+INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("11111111111", "54234234232");
+INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("11111111111", "43522345332");
+INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("22222222222", "23453452422");
+INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("33333333333", "52345234352");
+INSERT INTO Tel_Pessoa(fk_Pessoa_CPF, Telefone) VALUES ("44444444444", "34563456534");
 
 INSERT INTO Funcionario (matricula, data_admissao, data_demissao, CNTPS, salario, carga_horaria, CPF_Funcionario) 
 VALUES ("213187312", SUBDATE(NOW(), INTERVAL 5 YEAR), NULL, "52009089", 3311, 40, "34567823412");
@@ -116,9 +119,9 @@ INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("12745987901", "12
 INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("12925378901", "12745378901");
 INSERT INTO Acompanha(CPF_Paciente, CPF_Acompanhante) VALUES ("12925378901", "12746722201");
 
-INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "9137284656428");
-INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "916428");
-INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("22222222222", "111312428");
+INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("33333333333", "9137284656428");
+INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("33333333333", "916428");
+INSERT INTO Cuida (CPF_Paciente, matricula_enfermeiro) VALUES ("33333333333", "111312428");
 
 INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", "111312428");
 INSERT INTO Chefia (matricula_enfermeiro_chefe, matricula_enfermeiro_chefiado) VALUES ("9137284656428", "916428");
