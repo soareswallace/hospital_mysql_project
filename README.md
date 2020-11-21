@@ -1,20 +1,56 @@
-## Up and Running this project using Docker.
+# Iniciando este projeto usando Docker
 
-First pull the image from docker hub.
+Primeiro dê um pull da imagem do Docker Hub.
 `docker pull mysql/mysql-server:latest`
 
-Launch your MySQL container.
+Inicie o conatinaer da imagem do MySQL.
 
 `docker run --name=<container_name> -d mysql/mysql-server:latest`
 
-Check the default password that docker create for your database by looking at the logs. This command will show you the container logs. You should look out for the default password.
+Mude a senha padrão criada ao iniciar o container. A senha pode ser vista olhando os logs do container usando o comando abaixo:
 
 `docker logs <container_name>`
 
-After copying the password you can access the MySQL by doing.
+Agora com a senha em mãos você pode entrar no container usando a senha padrão criada durante a criação.
 
 `docker exec -it <container_name> mysql -uroot -p`
 
-Right after change your root password by running the following:
+Logo após entrar no container altere a senha para uma que você possa se lembrar usando o comando abaixo:
 
 `ALTER USER 'root'@'localhost' IDENTIFIED BY 'newpassword';`
+
+## Critérios do projeto
+
+## Ajuste no projeto lógico
+
+- [ ] valor padrão para atributo criado
+- [ ] validação de dados a serem inseridos
+- [ ] ação de disparo referencial
+
+## Scripts
+
+- [x] selecionar todos os dados de uma tabela
+- [x] selecionar um subconjunto de atributos de uma tabela
+- [x] selecionar dados de uma tabela mediante alguma condição
+- [x] realizar seleção de dados sem apresentar duplicadas
+- [ ] realizar consulta de seleção-projeção-junção
+- [x] atribuir “apelidos”
+- [x] aplicar união
+- [x] aplicar interseção
+- [x] aplicar diferença
+- [x] aplicar produto cartesiano
+- [x] realizar seleção sob condição que envolva outra seleção
+- [x] consultar valores de atributos que iniciem por algum termo
+- [x] ordenar resultados de consultas de forma ascendente
+- [x] utilizar função de agregação
+- [x] realizar agrupamento de resultado de consulta
+- [ ] criar regra apenas para consultas do banco criado
+- [ ] criar regra para execução de comandos DML e DQL
+- [ ] criar regra para execução de comandos DDL
+- [ ] criar usuário que possua a regra padrão para consulta (criada anteriormente)
+- [ ] criar usuário que possua a regra padrão para comandos DML e DQL (criada anteriormente)
+- [ ] criar usuário que possua a regra padrão para comandos DDL (criada anteriormente)
+- [ ] criar uma transação única
+- [ ] criar uma view a partir de mais de uma tabela
+- [ ] criar uma regra para consulta apenas na visualização criada
+- [ ] criar usuário que possua a regra padrão para consulta da view (criadas anteriormente)
