@@ -42,9 +42,11 @@ FROM Enfermeiro;
 
 /*  
     Descriçao da operaçao em Algebra Relacional:
-    PacientesConsulta ← π CPF_Paciente (Consulta)
-    Remedios ← π registroMS (Remedio)
-    PacientesConsulta x Prescreve
+        PacientesConsulta ← π CPF_Paciente (Consulta)
+        Remedios ← π registroMS (Prescreve)
+        ρ a (PacientesConsulta)
+        ρ b (Remedios)
+        a x b
 
 
     Requisitos atendidos:
@@ -127,18 +129,17 @@ FROM Funcionario);
 
 /*
     Descriçao da operaçao em Algebra Relacional:
-    funcionarioDoente ← π matricula_funcionario (Funcionario_Paciente)
-    funcionario ← π matricula (Funcionario)
+        funcionarioDoente ← π matricula_funcionario (Funcionario_Paciente)
+        funcionario ← π matricula (Funcionario)
 
     funcionario - funcionarioDoente
 
     Requisitos atendidos:
         aplicar diferenca
         realizar seleção sob condição que envolva outra seleção
-        Retorna  as matriculas dos funcionarios que nao sao pacientes do hospital, ps: EXCEPT nao e suportado pelo MySQL
 
     Retorno:
-        Matricula dos funcionarios que não são pacientes do hospital.
+        Matricula dos funcionarios que não estão doentes no hospital.
 
 */
 SELECT matricula
@@ -201,10 +202,10 @@ GROUP BY Especialidade;
 
 /*
     Descriçao da operaçao em Algebra Relacional:
-    salarioMaiorQue2000 ← σ salario>2000 (Funcionario)
-    funcionarioMedico ← π matricula_medico (Medico)
-    MedicosMaisQue2000 ← salarioMaiorQue2000 ⋈ (matricula=matricula_medico) funcionarioMedico
-    π (data_admissao, CNTPS) (MedicosMaisQue2000)
+        salarioMaiorQue2000 ← σ salario>2000 (Funcionario)
+        funcionarioMedico ← π matricula_medico (Medico)
+        MedicosMaisQue2000 ← salarioMaiorQue2000 ⋈ (matricula=matricula_medico) funcionarioMedico
+        π (data_admissao, CNTPS) (MedicosMaisQue2000)
 
     Requisitos atendidos:
         realizar consulta de seleção-projeção-junção
