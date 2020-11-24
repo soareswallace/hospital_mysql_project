@@ -23,7 +23,7 @@ Logo após entrar no container altere a senha para uma que você possa se lembra
 
 ## Scripts
 - [x] Ajuste no projeto lógico
-- [ ] Algebra relacional nos scripts
+- [x] Algebra relacional nos scripts
 - [x] valor padrão para atributo criado
 - [x] validação de dados a serem inseridos
 - [x] ação de disparo referencial
