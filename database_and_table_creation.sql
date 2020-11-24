@@ -1,25 +1,3 @@
--- DROP TABLE Prescreve;
--- DROP TABLE Consulta;
--- DROP TABLE Possui;
--- DROP TABLE Ocupa;
--- DROP TABLE Chefia;
--- DROP TABLE Cuida;
--- DROP TABLE Tecnico;
--- DROP TABLE Enfermeiro;
--- DROP TABLE Medico;
--- DROP TABLE Executa;
--- DROP TABLE Acompanha;
--- DROP TABLE Paciente;
--- DROP TABLE Funcionario_Paciente;
--- DROP TABLE Funcionario;
--- DROP TABLE Acompanhante;
--- DROP TABLE Tel_Pessoa;
--- DROP TABLE Pessoa;
--- DROP TABLE Leito;
--- DROP TABLE Prontuario;
--- DROP TABLE Remedio;
--- DROP TABLE Exame;
-
 CREATE DATABASE hospital;
 USE hospital;
 
