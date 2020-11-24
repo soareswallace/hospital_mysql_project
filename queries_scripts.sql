@@ -52,7 +52,7 @@ FROM Enfermeiro;
     Requisitos atendidos:
         aplicar produto cartesiano
         atribuir apelidos
-        Retorna o produto cartesiano a partir da tabela de Consulta e Prescreve
+      
 
     Retorno:
         Produto cartesiano entre as tabelas Consulta e Prescreve contendo os CPF dos Pacientes e registroMS dos Remedios
