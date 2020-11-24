@@ -40,18 +40,20 @@ FROM Paciente;
 SELECT DISTINCT Especialidade
 FROM Enfermeiro;
 
--- aplicar produto cartesiano
--- atribuir apelidos
--- Retorna o produto cartesiano a partir da tabela de Consulta e Prescreve
-
 /*  
-    NAO TA PRONTO
     Descriçao da operaçao em Algebra Relacional:
+    PacientesConsulta ← π CPF_Paciente (Consulta)
+    Remedios ← π registroMS (Remedio)
+    PacientesConsulta x Prescreve
+
 
     Requisitos atendidos:
+        aplicar produto cartesiano
+        atribuir apelidos
+        Retorna o produto cartesiano a partir da tabela de Consulta e Prescreve
 
     Retorno:
-
+        Produto cartesiano entre as tabelas Consulta e Prescreve contendo os CPF dos Pacientes e registroMS dos Remedios
 */
 SELECT 
     CPF_Paciente, registroMS
@@ -97,11 +99,13 @@ WHERE Especialidade = 'Psiquiatra';
 
 
 /*
-    NAO TA PRONTO
     Descriçao da operaçao em Algebra Relacional:
         CPF_FUNCIONARIO ← π CPF_Funcionario (Funcionario)
-        ρ(CPF) CPF_FUNCIONARIO
-        NOME_COMPLETO ← π nomeCompleto (CPF_FUNCIONARIO)
+        CPF_Pessoa ← π CPF (Pessoa)
+
+        FuncionariosPessoa ← CPF_FUNCIONARIO ∩ CPF_Pessoa
+
+        π nomeCompleto (FuncionariosPessoa)
 
 
 
@@ -121,17 +125,20 @@ WHERE CPF IN (
 SELECT CPF_Funcionario AS CPF
 FROM Funcionario);
 
--- aplicar diferenca
--- realizar seleção sob condição que envolva outra seleção
--- Retorna  as matriculas dos funcionarios que nao sao pacientes do hospital, ps: EXCEPT nao e suportado pelo MySQL
 /*
-    NAO TA PRONTO
     Descriçao da operaçao em Algebra Relacional:
+    funcionarioDoente ← π matricula_funcionario (Funcionario_Paciente)
+    funcionario ← π matricula (Funcionario)
 
+    funcionario - funcionarioDoente
 
     Requisitos atendidos:
+        aplicar diferenca
+        realizar seleção sob condição que envolva outra seleção
+        Retorna  as matriculas dos funcionarios que nao sao pacientes do hospital, ps: EXCEPT nao e suportado pelo MySQL
 
     Retorno:
+        Matricula dos funcionarios que não estão doentes no hospital.
 
 */
 SELECT matricula
@@ -193,13 +200,17 @@ FROM Medico
 GROUP BY Especialidade;
 
 /*
-    NAO TA PRONTO
     Descriçao da operaçao em Algebra Relacional:
+    salarioMaiorQue2000 ← σ salario>2000 (Funcionario)
+    funcionarioMedico ← π matricula_medico (Medico)
+    MedicosMaisQue2000 ← salarioMaiorQue2000 ⋈ (matricula=matricula_medico) funcionarioMedico
+    π (data_admissao, CNTPS) (MedicosMaisQue2000)
 
     Requisitos atendidos:
         realizar consulta de seleção-projeção-junção
 
     Retorno:
+        A data de admissão e o CNTPS dos medicos que ganham mais que R$2000
 
 */
 SELECT data_admissao, CNTPS 
@@ -233,7 +244,7 @@ COMMIT;
         criar uma view a partir de mais de uma tabela
 
     Retorno:
-        view
+        View que retorna os pacientes sem enfermeiro.
 
 */
 CREATE VIEW paciente_sem_enfermeiro AS
