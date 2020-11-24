@@ -138,7 +138,7 @@ FROM Funcionario);
         Retorna  as matriculas dos funcionarios que nao sao pacientes do hospital, ps: EXCEPT nao e suportado pelo MySQL
 
     Retorno:
-        Matricula dos funcionarios que não estão doentes no hospital.
+        Matricula dos funcionarios que não são pacientes do hospital.
 
 */
 SELECT matricula
